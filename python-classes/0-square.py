@@ -4,6 +4,6 @@
 
 
 
-class square:
+class Square:
     """empty class that doesn't retun anything """
     pass

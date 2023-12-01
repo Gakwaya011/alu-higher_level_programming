@@ -1,3 +1,14 @@
-#!/bin/bash
-# Script that takes in a URL, sends a request and displays the size of the body of the response
-curl -sI "$1" | grep "Content-Length" | cut -d " " -f2
+#!/usr/bin/python3
+"""I document you"""
+
+
+import urllib.request
+
+
+if __name__ == '__main__':
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+        content = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(content.decode("utf-8")))

@@ -1,14 +1,10 @@
 #!/usr/bin/python3
-"""I document you"""
-
+"""I documented you"""
 
 import urllib.request
-
+import sys
 
 if __name__ == '__main__':
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-        content = response.read()
-        print("Body response:")
-        print("\t- type: {}".format(type(content)))
-        print("\t- content: {}".format(content))
-        print("\t- utf8 content: {}".format(content.decode("utf-8")))
+    with urllib.request.urlopen(sys.argv[1]) as response:
+        header = response.info()
+        print(header["X-Request-Id"])

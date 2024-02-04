@@ -1,11 +1,10 @@
 #!/usr/bin/node
+const args = process.argv.slice(2);
 
-/*
- * The process.argv property returns an array containing the arguments passed
- * to the process when run in the command line. The first element is the process
- * execution path and the second element is the path for the js file. Hence 
- * the need to start the count from two and not 0.
-*/
-
-const argument = process.argv.length;
-console.log(argument === 2 ? 'No argument' : argument === 3 ? 'Argument found' : 'Arguments found');
+if (args.length === 0) {
+  console.log('No argument');
+} else if (args.length === 1) {
+  console.log('Argument found');
+} else {
+  console.log('Arguments found');
+}
